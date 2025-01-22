@@ -1,0 +1,60 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cliente</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+ <form th:action="@{/clientes/crear}" th:object="${cliente}" method="post">
+        <div class="flex flex-row py-4 items-center border-b-2 p-2">
+            <div class="basis-1/2 text-4xl">
+                <h1>Crear Cliente</h1>
+            </div>
+        </div>
+        <div class="flex flex-row my-0.5">
+            <div class="basis-1/2">
+                Nombre
+            </div>
+            <div class="basis-1/2">
+                <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{nombre}" />
+            </div>
+            <div class="basis-1/2">
+                Primer apellido
+            </div>
+            <div class="basis-1/2">
+                <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{apellido1}" />
+            </div>
+            <div class="basis-1/2">
+                Segundo apellido
+            </div>
+            <div class="basis-1/2">
+                <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{apellido2}" />
+            </div>
+            <div class="basis-1/2">
+                Ciudad
+            </div>
+            <div class="basis-1/2">
+                <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{ciudad}" />
+            </div>
+            <div class="basis-1/2">
+                Categoría
+            </div>
+            <div class="basis-1/2">
+                <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{categoria}" />
+            </div>
+        </div>
+        <div class="basis-1/2 flex justify-center">
+            <button class="btn btn-blue float-right">Guardar</button>
+        </div>
+    </form>
+
+</body>
+</html>
