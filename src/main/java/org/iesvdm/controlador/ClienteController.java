@@ -50,7 +50,7 @@ public class ClienteController {
 	@GetMapping("/clientes/crear")
 	public String crear(Model model) {
 
-		Cliente cliente = new Cliente(1, null, null, null, null, 0);
+		Cliente cliente = new Cliente();
 		model.addAttribute("cliente", cliente);
 
 		return "crear-cliente";
