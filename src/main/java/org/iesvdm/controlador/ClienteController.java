@@ -41,7 +41,7 @@ public class ClienteController {
 	public String detalle(Model model, @PathVariable Integer id ) {
 
 		Cliente cliente = clienteService.one(id);
-		model.addAttribute("clientes", cliente);
+		model.addAttribute("cliente", cliente);
 
 		return "detalle-cliente";
 

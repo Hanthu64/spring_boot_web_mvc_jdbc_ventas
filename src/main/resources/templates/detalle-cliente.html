@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle</title>
+    <title>Detalle Cliente</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
 </head>
 <body>
-Texto de prueba
+<div class="container mx-auto px-4">
+    <div class="flex flex-row py-4 items-center border-b-2 p-2">
+        <div class="basis-1/2 text-4xl">
+            <h1>Detalle Cliente</h1>
+        </div>
+        <form class="basis-1/2 flex justify-center" action="/clientes" >
+            <button class="btn btn-gray float-right">Volver</button>
+        </form>
+    </div>
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Nombre</label>
+        </div>
+        <div class="basis-1/2">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${cliente.nombre}" value="Nombre" readonly="readonly"/>
+        </div>
+    </div>
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Apellido 1</label>
+        </div>
+        <div class="basis-1/2">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${cliente.apellido1}" value="Apellido 1" readonly="readonly"/>
+        </div>
+    </div>
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Apellido 2</label>
+        </div>
+        <div class="basis-1/2">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${cliente.apellido2}" value="Apellido 2" readonly="readonly"/>
+        </div>
+    </div>
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Ciudad</label>
+        </div>
+        <div class="basis-1/2">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${cliente.ciudad}" value="Ciudad" readonly="readonly"/>
+        </div>
+    </div>
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Categoría</label>
+        </div>
+        <div class="basis-1/2">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${cliente.categoria}" value="Categoría" readonly="readonly"/>
+        </div>
+    </div>
 </body>
 </html>
