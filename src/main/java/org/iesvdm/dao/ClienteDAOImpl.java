@@ -1,7 +1,9 @@
 package org.iesvdm.dao;
 
 import java.sql.PreparedStatement;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.iesvdm.modelo.Cliente;
@@ -146,5 +148,19 @@ public class ClienteDAOImpl implements ClienteDAO {
 		log.info("Delete de Cliente con {} registros eliminados.", rows);		
 		
 	}
-	
+
+	@Override
+	public Map<Long, Integer> getNumeroPedidosByIdCliente() {
+		return jdbcTemplate.query("""
+    			SELECT c.id, COUNT(p.id) FROM cliente c
+    			LEFT JOIN pedido p ON c.id = p.id_cliente
+    			GROUP BY c.id
+				""", (rs) -> {
+			Map<Long, Integer> map = new HashMap<>();
+			while(rs.next()){
+				map.put(rs.getLong(1), rs.getInt(2));
+			}
+			return map;
+		});
+	}
 }
